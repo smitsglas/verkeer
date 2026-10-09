@@ -1,0 +1,85 @@
+Bestanden in zip: 40
+  vrijgaverapport-6.13.A.md
+  wijzigingsrapport-6.13.A-tov-6.12.A.md
+  RD/
+  RD/vild_point.prj
+  RD/vild_area.shp
+  RD/vild_line.fix
+  RD/vild_area.prj
+  RD/vild_point.shp
+  RD/vild_area.dbf
+  RD/vild_area.fix
+  RD/vild_line.prj
+  RD/vild_line.shp
+  RD/vild_point.dbf
+  RD/vild_line.shx
+  RD/vild_point.fix
+  RD/vild_area.shx
+  RD/vild_point.shx
+  RD/vild_line.dbf
+  VILD6.13.A.dbf
+  WGS84/
+  WGS84/vild_point.prj
+  WGS84/vild_area.shp
+  WGS84/vild_line.fix
+  WGS84/vild_area.prj
+  WGS84/vild_point.shp
+  WGS84/vild_area.dbf
+  WGS84/vild_area.fix
+  WGS84/vild_line.prj
+  WGS84/vild_line.shp
+  WGS84/vild_point.dbf
+  WGS84/vild_line.shx
+  WGS84/vild_point.fix
+  WGS84/vild_area.shx
+  WGS84/vild_point.shx
+  WGS84/vild_line.dbf
+  Productbeschrijving VILD 20200402.pdf
+  Technisch Handboek VILD 6 20191101.pdf
+  Belangrijkste wijzigingen VILD6.13.A.txt
+  vrijgaverapport-6.13.txt
+  wijzigingsrapport-6.13.A-tov-6.12.txt
+
+RD/vild_area.dbf: 396 rijen
+  kolommen: LOC_NR
+  voorbeeld: {"LOC_NR": "50"}
+  voorbeeld: {"LOC_NR": "51"}
+  gekozen -> code=LOC_NR weg=None naam=None
+
+RD/vild_point.dbf: 9844 rijen
+  kolommen: LOC_NR
+  voorbeeld: {"LOC_NR": "1500"}
+  voorbeeld: {"LOC_NR": "1501"}
+  gekozen -> code=LOC_NR weg=None naam=None
+
+RD/vild_line.dbf: 1405 rijen
+  kolommen: LOC_NR
+  voorbeeld: {"LOC_NR": "2002"}
+  voorbeeld: {"LOC_NR": "2003"}
+  gekozen -> code=LOC_NR weg=None naam=None
+
+VILD6.13.A.dbf: 11939 rijen
+  kolommen: LOC_NR, LOC_TYPE, LOC_DES, ROADNUMBER, ROADNAME, FIRST_NAME, SECND_NAME, JUNCT_REF, EXIT_NR, HSTART_POS, HEND_POS, HSTART_NEG, HEND_NEG, HECTO_CHAR, HECTO_DIR, POS_IN, POS_OUT, NEG_IN, NEG_OUT, DIR, AREA_REF, LIN_REF, INTER_REF, POS_OFF, NEG_OFF, URBAN_CODE, PRES_POS, PRES_NEG, FAR_AWAY, CITY_DISTR, TOP_SIGN, TYPE_CODE, MW_REF, RW_NR, AW_REF
+  voorbeeld: {"LOC_NR": "0", "LOC_TYPE": "V1.0", "LOC_DES": "Versie", "ROADNUMBER": "", "ROADNAME": "", "FIRST_NAME": "6.13.A", "SECND_NAME": "25-08-2025", "JUNCT_REF": "0", "EXIT_NR": "", "HSTART_POS": "-1", "HEND_POS": "-1", "HSTART_NEG": "-1", "HEND_NEG": "-1", "HECTO_CHAR": "", "HECTO_DIR": "0", "POS_IN": "0", "POS_OUT": "0", "NEG_IN": "0", "NEG_OUT": "0", "DIR": "", "AREA_REF": "0", "LIN_REF": "0", "INTER
+  voorbeeld: {"LOC_NR": "10", "LOC_TYPE": "A1.0", "LOC_DES": "Werelddeel", "ROADNUMBER": "", "ROADNAME": "", "FIRST_NAME": "Europa", "SECND_NAME": "", "JUNCT_REF": "0", "EXIT_NR": "", "HSTART_POS": "-1", "HEND_POS": "-1", "HSTART_NEG": "-1", "HEND_NEG": "-1", "HECTO_CHAR": "", "HECTO_DIR": "0", "POS_IN": "0", "POS_OUT": "0", "NEG_IN": "0", "NEG_OUT": "0", "DIR": "", "AREA_REF": "0", "LIN_REF": "0", "INTER_REF"
+  gekozen -> code=LOC_NR weg=ROADNUMBER naam=FIRST_NAME
+
+WGS84/vild_area.dbf: 396 rijen
+  kolommen: LOC_NR
+  voorbeeld: {"LOC_NR": "50"}
+  voorbeeld: {"LOC_NR": "51"}
+  gekozen -> code=LOC_NR weg=None naam=None
+
+WGS84/vild_point.dbf: 9844 rijen
+  kolommen: LOC_NR
+  voorbeeld: {"LOC_NR": "1500"}
+  voorbeeld: {"LOC_NR": "1501"}
+  gekozen -> code=LOC_NR weg=None naam=None
+
+WGS84/vild_line.dbf: 1405 rijen
+  kolommen: LOC_NR
+  voorbeeld: {"LOC_NR": "2002"}
+  voorbeeld: {"LOC_NR": "2003"}
+  gekozen -> code=LOC_NR weg=None naam=None
+
+Locaties met wegnummer: 11483
