@@ -58,6 +58,19 @@ def cut(s, n=100):
     s = re.sub(r"\s+", " ", s).strip()
     return s if len(s) <= n else s[:n].rsplit(" ", 1)[0] + "…"
 
+def outline(rec, maxlines=120):
+    lines = []
+    def walk(e, depth):
+        if len(lines) >= maxlines:
+            return
+        attrs = " ".join("%s=%s" % (ln(k), v) for k, v in e.attrib.items())
+        txt = (e.text or "").strip()
+        lines.append("  " * depth + ln(e.tag) + (" [" + attrs + "]" if attrs else "") + (": " + txt[:80] if txt else ""))
+        for c in e:
+            walk(c, depth + 1)
+    walk(rec, 0)
+    return "\n".join(lines)
+
 def parse(xml_bytes):
     root = ET.fromstring(xml_bytes)
     counts, jams = {}, []
@@ -93,8 +106,8 @@ def parse(xml_bytes):
             out.append(s)
     diag = ["Situatietypes in het bestand:"] + ["  %s: %d" % kv for kv in sorted(counts.items())]
     diag.append("Herkende files: %d" % len(jams))
-    for rec in jams[:3]:
-        diag.append("\n--- voorbeeld filebericht ---\n" + ET.tostring(rec, encoding="unicode")[:3000])
+    for i, rec in enumerate(jams[:3], 1):
+        diag.append("\n--- opbouw filebericht %d (elke regel: element [kenmerken]: waarde) ---\n%s" % (i, outline(rec)))
     return out, "\n".join(diag)
 
 def fetch():
