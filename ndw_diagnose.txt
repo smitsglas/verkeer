@@ -1,19 +1,19 @@
 Situatietypes in het bestand:
-  AbnormalTraffic: 5
-  Accident: 14
-  GeneralNetworkManagement: 18
-  GeneralObstruction: 26
+  AbnormalTraffic: 12
+  Accident: 11
+  GeneralNetworkManagement: 28
+  GeneralObstruction: 24
   ReroutingManagement: 66
-  RoadOrCarriagewayOrLaneManagement: 1026
-  SpeedManagement: 114
-  VehicleObstruction: 180
-Herkende files: 5
+  RoadOrCarriagewayOrLaneManagement: 1032
+  SpeedManagement: 115
+  VehicleObstruction: 191
+Herkende files: 12
 
 --- opbouw filebericht 1 (elke regel: element [kenmerken]: waarde) ---
-situationRecord [type=sit:AbnormalTraffic id=NLRWS_0005474145_1 version=12]
+situationRecord [type=sit:AbnormalTraffic id=NLRWS_0005474145_1 version=38]
   situationRecordCreationReference: 7b4768a3-e41c-462d-b1e1-d0b807f5b5dd
   situationRecordCreationTime: 2026-10-09T07:49:27.999945Z
-  situationRecordVersionTime: 2026-10-09T08:01:00.306052Z
+  situationRecordVersionTime: 2026-10-09T08:27:00.908174Z
   probabilityOfOccurrence: certain
   source
     sourceName
@@ -28,7 +28,7 @@ situationRecord [type=sit:AbnormalTraffic id=NLRWS_0005474145_1 version=12]
   impact
     delays
       delayBand: upToTenMinutes
-      delayTimeValue: 309.0
+      delayTimeValue: 424.0
   locationReference [type=loc:ItineraryByIndexedLocations]
     locationContainedInItinerary [index=0]
       location [type=loc:LinearLocation]
@@ -36,7 +36,7 @@ situationRecord [type=sit:AbnormalTraffic id=NLRWS_0005474145_1 version=12]
           carriageway
             carriageway: mainCarriageway
         gmlLineString [srsName=WGS 84]
-          posList: 52.318984 5.090557 52.318452 5.092498 52.317516 5.095669 52.3159 5.101281 52.315
+          posList: 52.320359 5.084439 52.320274 5.084809 52.319925 5.086563 52.319612 5.087986 52.3
     locationContainedInItinerary [index=1]
       location [type=loc:SingleRoadLinearLocation]
         supplementaryPositionalDescription
@@ -53,20 +53,20 @@ situationRecord [type=sit:AbnormalTraffic id=NLRWS_0005474145_1 version=12]
             alertCLocation
               specificLocation: 7018
             offsetDistance
-              offsetDistance: 1844
+              offsetDistance: 1891
           alertCMethod4SecondaryPointLocation
             alertCLocation
               specificLocation: 7009
             offsetDistance
-              offsetDistance: 3756
-  abnormalTrafficType: slowTraffic
-  queueLength: 2600
+              offsetDistance: 3309
+  abnormalTrafficType: stationaryTraffic
+  queueLength: 3000
 
 --- opbouw filebericht 2 (elke regel: element [kenmerken]: waarde) ---
-situationRecord [type=sit:AbnormalTraffic id=NLRWS_0005473996_1 version=132]
-  situationRecordCreationReference: 576af79a-dbbe-43a7-956d-da6b4b4b1bf3
-  situationRecordCreationTime: 2026-10-09T05:50:26.492611Z
-  situationRecordVersionTime: 2026-10-09T08:01:00.735860Z
+situationRecord [type=sit:AbnormalTraffic id=NLRWS_0005474166_1 version=4]
+  situationRecordCreationReference: b0360c6f-5298-4380-befb-ad2749f1cc00
+  situationRecordCreationTime: 2026-10-09T08:23:27.386715Z
+  situationRecordVersionTime: 2026-10-09T08:27:00.679281Z
   probabilityOfOccurrence: certain
   source
     sourceName
@@ -75,71 +75,13 @@ situationRecord [type=sit:AbnormalTraffic id=NLRWS_0005473996_1 version=132]
   validity
     validityStatus: definedByValidityTimeSpec
     validityTimeSpecification
-      overallStartTime: 2026-10-09T05:50:26.492611Z
+      overallStartTime: 2026-10-09T08:23:27.386715Z
       validPeriod
-        startOfPeriod: 2026-10-09T05:50:26.492611Z
-  impact
-    delays
-      delayBand: betweenThirtyMinutesAndOneHour
-      delayTimeValue: 2432.0
-  cause
-    causeDescription
-      values
-        value [lang=nl]: Ongeval(len)
-    causeType: accident
-  locationReference [type=loc:ItineraryByIndexedLocations]
-    locationContainedInItinerary [index=0]
-      location [type=loc:LinearLocation]
-        supplementaryPositionalDescription
-          carriageway
-            carriageway: mainCarriageway
-        gmlLineString [srsName=WGS 84]
-          posList: 51.951447 5.87897 51.981331 5.978122
-    locationContainedInItinerary [index=1]
-      location [type=loc:SingleRoadLinearLocation]
-        supplementaryPositionalDescription
-          carriageway
-            carriageway: mainCarriageway
-        alertCLinear [type=loc:AlertCMethod4Linear]
-          alertCLocationCountryCode: 8
-          alertCLocationTableNumber: 6.13
-          alertCLocationTableVersion: A
-          alertCDirection
-            alertCDirectionCoded: positive
-            alertCAffectedDirection: aligned
-          alertCMethod4PrimaryPointLocation
-            alertCLocation
-              specificLocation: 8880
-            offsetDistance
-              offsetDistance: 973
-          alertCMethod4SecondaryPointLocation
-            alertCLocation
-              specificLocation: 8870
-            offsetDistance
-              offsetDistance: 2227
-  abnormalTrafficType: stationaryTraffic
-  queueLength: 5900
-
---- opbouw filebericht 3 (elke regel: element [kenmerken]: waarde) ---
-situationRecord [type=sit:AbnormalTraffic id=NLRWS_0005473934_1 version=199]
-  situationRecordCreationReference: ac3e2c9f-5a05-4c87-81bf-b70ee9da8216
-  situationRecordCreationTime: 2026-10-09T04:42:23.999617Z
-  situationRecordVersionTime: 2026-10-09T08:01:00.625939Z
-  probabilityOfOccurrence: certain
-  source
-    sourceName
-      values
-        value [lang=nl]: NLRWS
-  validity
-    validityStatus: definedByValidityTimeSpec
-    validityTimeSpecification
-      overallStartTime: 2026-10-09T04:42:23.999617Z
-      validPeriod
-        startOfPeriod: 2026-10-09T04:42:23.999617Z
+        startOfPeriod: 2026-10-09T08:23:27.386715Z
   impact
     delays
       delayBand: betweenTenMinutesAndThirtyMinutes
-      delayTimeValue: 817.0
+      delayTimeValue: 981.0
   locationReference [type=loc:ItineraryByIndexedLocations]
     locationContainedInItinerary [index=0]
       location [type=loc:LinearLocation]
@@ -147,7 +89,7 @@ situationRecord [type=sit:AbnormalTraffic id=NLRWS_0005473934_1 version=199]
           carriageway
             carriageway: mainCarriageway
         gmlLineString [srsName=WGS 84]
-          posList: 51.14994 5.942239 51.134624 5.910813
+          posList: 51.871926 4.56255 51.871035 4.560887 51.87027 4.55924 51.869764 4.558039 51.8667
     locationContainedInItinerary [index=1]
       location [type=loc:SingleRoadLinearLocation]
         supplementaryPositionalDescription
@@ -162,13 +104,66 @@ situationRecord [type=sit:AbnormalTraffic id=NLRWS_0005473934_1 version=199]
             alertCAffectedDirection: aligned
           alertCMethod4PrimaryPointLocation
             alertCLocation
-              specificLocation: 21739
+              specificLocation: 7450
             offsetDistance
-              offsetDistance: 2908
+              offsetDistance: 2630
           alertCMethod4SecondaryPointLocation
             alertCLocation
-              specificLocation: 21744
+              specificLocation: 7453
             offsetDistance
-              offsetDistance: 2692
+              offsetDistance: 4270
   abnormalTrafficType: stationaryTraffic
-  queueLength: 2800
+  queueLength: 1700
+
+--- opbouw filebericht 3 (elke regel: element [kenmerken]: waarde) ---
+situationRecord [type=sit:AbnormalTraffic id=NLRWS_0005474164_1 version=4]
+  situationRecordCreationReference: baa06106-b783-433a-8afc-acb5a7d7ebd5
+  situationRecordCreationTime: 2026-10-09T08:20:27.609590Z
+  situationRecordVersionTime: 2026-10-09T08:27:00.790609Z
+  probabilityOfOccurrence: certain
+  source
+    sourceName
+      values
+        value [lang=nl]: NLRWS
+  validity
+    validityStatus: definedByValidityTimeSpec
+    validityTimeSpecification
+      overallStartTime: 2026-10-09T08:20:27.609590Z
+      validPeriod
+        startOfPeriod: 2026-10-09T08:20:27.609590Z
+  impact
+    delays
+      delayBand: upToTenMinutes
+      delayTimeValue: 319.0
+  locationReference [type=loc:ItineraryByIndexedLocations]
+    locationContainedInItinerary [index=0]
+      location [type=loc:LinearLocation]
+        supplementaryPositionalDescription
+          carriageway
+            carriageway: mainCarriageway
+        gmlLineString [srsName=WGS 84]
+          posList: 51.900192 4.224861 51.900323 4.229271 51.900339 4.230545 51.900313 4.231534 51.9
+    locationContainedInItinerary [index=1]
+      location [type=loc:SingleRoadLinearLocation]
+        supplementaryPositionalDescription
+          carriageway
+            carriageway: mainCarriageway
+        alertCLinear [type=loc:AlertCMethod4Linear]
+          alertCLocationCountryCode: 8
+          alertCLocationTableNumber: 6.13
+          alertCLocationTableVersion: A
+          alertCDirection
+            alertCDirectionCoded: positive
+            alertCAffectedDirection: aligned
+          alertCMethod4PrimaryPointLocation
+            alertCLocation
+              specificLocation: 8118
+            offsetDistance
+              offsetDistance: 1108
+          alertCMethod4SecondaryPointLocation
+            alertCLocation
+              specificLocation: 21984
+            offsetDistance
+              offsetDistance: 492
+  abnormalTrafficType: slowTraffic
+  queueLength: 2700
