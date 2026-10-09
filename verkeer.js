@@ -1,1 +1,1 @@
-window.VERKEER = {"t": 1791531413875, "n": 8, "items": ["AbnormalTraffic (5,9 km, 42 min)", "AbnormalTraffic (5,1 km, 27 min)", "AbnormalTraffic (2,9 km, 16 min)", "AbnormalTraffic (3,1 km, 12 min)", "AbnormalTraffic (2,2 km, 5 min)", "AbnormalTraffic (0,9 km, 3 min)", "AbnormalTraffic (2,0 km, 3 min)", "AbnormalTraffic (3,0 km)"]};
+window.VERKEER = {"t": 1791531987792, "n": 5, "items": ["AbnormalTraffic (5,9 km, 39 min)", "AbnormalTraffic (5,4 km, 21 min)", "AbnormalTraffic (3,1 km, 9 min)", "AbnormalTraffic (3,0 km, 5 min)", "AbnormalTraffic (3,0 km)"]};
