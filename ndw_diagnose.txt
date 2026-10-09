@@ -1,19 +1,167 @@
 Situatietypes in het bestand:
   AbnormalTraffic: 8
   Accident: 13
-  GeneralNetworkManagement: 17
-  GeneralObstruction: 23
+  GeneralNetworkManagement: 22
+  GeneralObstruction: 27
   ReroutingManagement: 66
-  RoadOrCarriagewayOrLaneManagement: 1026
+  RoadOrCarriagewayOrLaneManagement: 1025
   SpeedManagement: 114
-  VehicleObstruction: 191
+  VehicleObstruction: 199
 Herkende files: 8
 
---- voorbeeld filebericht ---
-<ns0:situationRecord xmlns:ns0="http://datex2.eu/schema/3/situation" xmlns:ns2="http://datex2.eu/schema/3/common" xmlns:ns3="http://datex2.eu/schema/3/locationReferencing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="sit:AbnormalTraffic" id="NLRWS_0005474127_1" version="7"><ns0:situationRecordCreationReference>41571db1-4a96-459a-b423-a2554834a59e</ns0:situationRecordCreationReference><ns0:situationRecordCreationTime>2026-10-09T07:15:27.496252Z</ns0:situationRecordCreationTime><ns0:situationRecordVersionTime>2026-10-09T07:22:00.785729Z</ns0:situationRecordVersionTime><ns0:probabilityOfOccurrence>certain</ns0:probabilityOfOccurrence><ns0:source><ns2:sourceName><ns2:values><ns2:value lang="nl">NLRWS</ns2:value></ns2:values></ns2:sourceName></ns0:source><ns0:validity><ns2:validityStatus>definedByValidityTimeSpec</ns2:validityStatus><ns2:validityTimeSpecification><ns2:overallStartTime>2026-10-09T07:15:27.496252Z</ns2:overallStartTime><ns2:validPeriod><ns2:startOfPeriod>2026-10-09T07:15:27.496252Z</ns2:startOfPeriod></ns2:validPeriod></ns2:validityTimeSpecification></ns0:validity><ns0:impact><ns0:delays><ns0:delayBand>upToTenMinutes</ns0:delayBand><ns0:delayTimeValue>250.0</ns0:delayTimeValue></ns0:delays></ns0:impact><ns0:locationReference xsi:type="loc:ItineraryByIndexedLocations"><ns3:locationContainedInItinerary index="0"><ns3:location xsi:type="loc:LinearLocation"><ns3:supplementaryPositionalDescription><ns3:carriageway><ns3:carriageway>mainCarriageway</ns3:carriageway></ns3:carriageway></ns3:supplementaryPositionalDescription><ns3:gmlLineString srsName="WGS 84"><ns3:posList>52.026914 4.323715 52.027866 4.324719 52.028407 4.32532 52.029303 4.326359 52.03011 4.32735 52.030997 4.328498 52.03161 4.329333 52.032257 4.33025 52.03311 4.33152 52.036074 4.336105 52.037073 4.337684 52.038409 4.33985 52.04013 4.342731 52.040829 4.343955 52.041716 4.345606 52.042059 4.346282 52.043176 4.348644</ns3:posList></ns3:gmlLineString></ns3:location></ns3:locationContainedInItinerary><ns3:locationContainedInItinerary index="1"><ns3:location xsi:type="loc:SingleRoadLinearLocation"><ns3:supplementaryPositionalDescription><ns3:carriageway><ns3:carriageway>mainCarriageway</ns3:carriageway></ns3:carriageway></ns3:supplementaryPositionalDescription><ns3:alertCLinear xsi:type="loc:AlertCMethod4Linear"><ns3:alertCLocationCountryCode>8</ns3:alertCLocationCountryCode><ns3:alertCLocationTableNumber>6.13</ns3:alertCLocationTableNumber><ns3:alertCLocationTableVersion>A</ns3:alertCLocationTableVersion><ns3:alertCDirection><ns3:alertCDirectionCoded>positive</ns3:alertCDirectionCoded><ns3:alertCAffectedDirection>aligned</ns3:alertCAffectedDirection></ns3:alertCDirection><ns3:alertCMethod4PrimaryPointLocation><ns3:alertCLocation><ns3:specificLocation>9196</ns3:specificLocation></ns3:alertCLocation><ns3:offsetDistance><ns3:offsetDistance>191</ns3:offsetDistance></ns3:offsetDistance></ns3:alertCMethod4PrimaryPointLocation><ns3:alertCMethod4SecondaryPointLocation><ns3
+--- opbouw filebericht 1 (elke regel: element [kenmerken]: waarde) ---
+situationRecord [type=sit:AbnormalTraffic id=NLRWS_0005474131_1 version=6]
+  situationRecordCreationReference: 5d635fb7-1e9a-4be4-ac3a-9db3e5a5dc45
+  situationRecordCreationTime: 2026-10-09T07:28:27.441952Z
+  situationRecordVersionTime: 2026-10-09T07:35:01.400587Z
+  probabilityOfOccurrence: certain
+  source
+    sourceName
+      values
+        value [lang=nl]: NLRWS
+  validity
+    validityStatus: definedByValidityTimeSpec
+    validityTimeSpecification
+      overallStartTime: 2026-10-09T07:28:27.441952Z
+      validPeriod
+        startOfPeriod: 2026-10-09T07:28:27.441952Z
+  impact
+    delays
+      delayBand: upToTenMinutes
+      delayTimeValue: 166.0
+  cause
+    causeDescription
+      values
+        value [lang=nl]: Ongeval(len)
+    causeType: accident
+  locationReference [type=loc:ItineraryByIndexedLocations]
+    locationContainedInItinerary [index=0]
+      location [type=loc:LinearLocation]
+        supplementaryPositionalDescription
+          carriageway
+            carriageway: connectingCarriageway
+        gmlLineString [srsName=WGS 84]
+          posList: 52.4590521 4.8467133 52.4589765 4.8466024 52.4589022 4.8465201 52.4587921 4.8463
+    locationContainedInItinerary [index=1]
+      location [type=loc:PointLocation]
+        supplementaryPositionalDescription
+          carriageway
+            carriageway: connectingCarriageway
+        alertCPoint [type=loc:AlertCMethod2Point]
+          alertCLocationCountryCode: 8
+          alertCLocationTableNumber: 6.13
+          alertCLocationTableVersion: A
+          alertCDirection
+            alertCDirectionCoded: negative
+            alertCAffectedDirection: aligned
+          alertCMethod2PrimaryPointLocation
+            alertCLocation
+              specificLocation: 10102
+  abnormalTrafficType: stationaryTraffic
+  queueLength: 900
 
---- voorbeeld filebericht ---
-<ns0:situationRecord xmlns:ns0="http://datex2.eu/schema/3/situation" xmlns:ns2="http://datex2.eu/schema/3/common" xmlns:ns3="http://datex2.eu/schema/3/locationReferencing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="sit:AbnormalTraffic" id="NLRWS_0005474126_1" version="8"><ns0:situationRecordCreationReference>eccee66d-3bed-4856-a006-df95c374a1fd</ns0:situationRecordCreationReference><ns0:situationRecordCreationTime>2026-10-09T07:14:27.709077Z</ns0:situationRecordCreationTime><ns0:situationRecordVersionTime>2026-10-09T07:22:00.460349Z</ns0:situationRecordVersionTime><ns0:probabilityOfOccurrence>certain</ns0:probabilityOfOccurrence><ns0:source><ns2:sourceName><ns2:values><ns2:value lang="nl">NLRWS</ns2:value></ns2:values></ns2:sourceName></ns0:source><ns0:validity><ns2:validityStatus>definedByValidityTimeSpec</ns2:validityStatus><ns2:validityTimeSpecification><ns2:overallStartTime>2026-10-09T07:14:27.709077Z</ns2:overallStartTime><ns2:validPeriod><ns2:startOfPeriod>2026-10-09T07:14:27.709077Z</ns2:startOfPeriod></ns2:validPeriod></ns2:validityTimeSpecification></ns0:validity><ns0:impact><ns0:delays><ns0:delayBand>upToTenMinutes</ns0:delayBand><ns0:delayTimeValue>197.0</ns0:delayTimeValue></ns0:delays></ns0:impact><ns0:locationReference xsi:type="loc:ItineraryByIndexedLocations"><ns3:locationContainedInItinerary index="0"><ns3:location xsi:type="loc:LinearLocation"><ns3:supplementaryPositionalDescription><ns3:carriageway><ns3:carriageway>mainCarriageway</ns3:carriageway></ns3:carriageway></ns3:supplementaryPositionalDescription><ns3:gmlLineString srsName="WGS 84"><ns3:posList>51.935423 6.096807 51.942295 6.082605 51.943055 6.080983 51.943729 6.079435 51.944552 6.077355 51.945125 6.07576 51.945489 6.074676 51.945912 6.073343</ns3:posList></ns3:gmlLineString></ns3:location></ns3:locationContainedInItinerary><ns3:locationContainedInItinerary index="1"><ns3:location xsi:type="loc:SingleRoadLinearLocation"><ns3:supplementaryPositionalDescription><ns3:carriageway><ns3:carriageway>mainCarriageway</ns3:carriageway></ns3:carriageway></ns3:supplementaryPositionalDescription><ns3:alertCLinear xsi:type="loc:AlertCMethod4Linear"><ns3:alertCLocationCountryCode>8</ns3:alertCLocationCountryCode><ns3:alertCLocationTableNumber>6.13</ns3:alertCLocationTableNumber><ns3:alertCLocationTableVersion>A</ns3:alertCLocationTableVersion><ns3:alertCDirection><ns3:alertCDirectionCoded>negative</ns3:alertCDirectionCoded><ns3:alertCAffectedDirection>aligned</ns3:alertCAffectedDirection></ns3:alertCDirection><ns3:alertCMethod4PrimaryPointLocation><ns3:alertCLocation><ns3:specificLocation>7328</ns3:specificLocation></ns3:alertCLocation><ns3:offsetDistance><ns3:offsetDistance>4303</ns3:offsetDistance></ns3:offsetDistance></ns3:alertCMethod4PrimaryPointLocation><ns3:alertCMethod4SecondaryPointLocation><ns3:alertCLocation><ns3:specificLocation>7333</ns3:specificLocation></ns3:alertCLocation><ns3:offsetDistance><ns3:offsetDistance>3497</ns3:offsetDistance></ns3:offse
+--- opbouw filebericht 2 (elke regel: element [kenmerken]: waarde) ---
+situationRecord [type=sit:AbnormalTraffic id=NLRWS_0005474123_1 version=24]
+  situationRecordCreationReference: b3df5a3a-dd24-4469-9d7c-3a16b6110b19
+  situationRecordCreationTime: 2026-10-09T07:11:27.646729Z
+  situationRecordVersionTime: 2026-10-09T07:35:01.065456Z
+  probabilityOfOccurrence: certain
+  source
+    sourceName
+      values
+        value [lang=nl]: NLRWS
+  validity
+    validityStatus: definedByValidityTimeSpec
+    validityTimeSpecification
+      overallStartTime: 2026-10-09T07:11:27.646729Z
+      validPeriod
+        startOfPeriod: 2026-10-09T07:11:27.646729Z
+  impact
+    delays
+      delayBand: upToTenMinutes
+      delayTimeValue: 273.0
+  locationReference [type=loc:ItineraryByIndexedLocations]
+    locationContainedInItinerary [index=0]
+      location [type=loc:LinearLocation]
+        supplementaryPositionalDescription
+          carriageway
+            carriageway: mainCarriageway
+        gmlLineString [srsName=WGS 84]
+          posList: 51.818832 5.680452 51.808433 5.677491 51.807447 5.67715 51.806852 5.676895 51.80
+    locationContainedInItinerary [index=1]
+      location [type=loc:SingleRoadLinearLocation]
+        supplementaryPositionalDescription
+          carriageway
+            carriageway: mainCarriageway
+        alertCLinear [type=loc:AlertCMethod4Linear]
+          alertCLocationCountryCode: 8
+          alertCLocationTableNumber: 6.13
+          alertCLocationTableVersion: A
+          alertCDirection
+            alertCDirectionCoded: negative
+            alertCAffectedDirection: aligned
+          alertCMethod4PrimaryPointLocation
+            alertCLocation
+              specificLocation: 9373
+            offsetDistance
+              offsetDistance: 1028
+          alertCMethod4SecondaryPointLocation
+            alertCLocation
+              specificLocation: 9380
+            offsetDistance
+              offsetDistance: 5772
+  abnormalTrafficType: slowTraffic
+  queueLength: 2200
 
---- voorbeeld filebericht ---
-<ns0:situationRecord xmlns:ns0="http://datex2.eu/schema/3/situation" xmlns:ns2="http://datex2.eu/schema/3/common" xmlns:ns3="http://datex2.eu/schema/3/locationReferencing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="sit:AbnormalTraffic" id="NLRWS_0005474123_1" version="11"><ns0:situationRecordCreationReference>b3df5a3a-dd24-4469-9d7c-3a16b6110b19</ns0:situationRecordCreationReference><ns0:situationRecordCreationTime>2026-10-09T07:11:27.646729Z</ns0:situationRecordCreationTime><ns0:situationRecordVersionTime>2026-10-09T07:22:00.868556Z</ns0:situationRecordVersionTime><ns0:probabilityOfOccurrence>certain</ns0:probabilityOfOccurrence><ns0:source><ns2:sourceName><ns2:values><ns2:value lang="nl">NLRWS</ns2:value></ns2:values></ns2:sourceName></ns0:source><ns0:validity><ns2:validityStatus>definedByValidityTimeSpec</ns2:validityStatus><ns2:validityTimeSpecification><ns2:overallStartTime>2026-10-09T07:11:27.646729Z</ns2:overallStartTime><ns2:validPeriod><ns2:startOfPeriod>2026-10-09T07:11:27.646729Z</ns2:startOfPeriod></ns2:validPeriod></ns2:validityTimeSpecification></ns0:validity><ns0:impact><ns0:delays><ns0:delayBand>upToTenMinutes</ns0:delayBand><ns0:delayTimeValue>256.0</ns0:delayTimeValue></ns0:delays></ns0:impact><ns0:locationReference xsi:type="loc:ItineraryByIndexedLocations"><ns3:locationContainedInItinerary index="0"><ns3:location xsi:type="loc:LinearLocation"><ns3:supplementaryPositionalDescription><ns3:carriageway><ns3:carriageway>mainCarriageway</ns3:carriageway></ns3:carriageway></ns3:supplementaryPositionalDescription><ns3:gmlLineString srsName="WGS 84"><ns3:posList>51.82595 5.682478 51.808551 5.677526 51.807573 5.677199 51.806727 5.676835 51.806043 5.676469 51.805182 5.675906 51.804394 5.67529 51.803628 5.674589 51.803148 5.674091 51.802569 5.673432 51.799721 5.669939</ns3:posList></ns3:gmlLineString></ns3:location></ns3:locationContainedInItinerary><ns3:locationContainedInItinerary index="1"><ns3:location xsi:type="loc:SingleRoadLinearLocation"><ns3:supplementaryPositionalDescription><ns3:carriageway><ns3:carriageway>mainCarriageway</ns3:carriageway></ns3:carriageway></ns3:supplementaryPositionalDescription><ns3:alertCLinear xsi:type="loc:AlertCMethod4Linear"><ns3:alertCLocationCountryCode>8</ns3:alertCLocationCountryCode><ns3:alertCLocationTableNumber>6.13</ns3:alertCLocationTableNumber><ns3:alertCLocationTableVersion>A</ns3:alertCLocationTableVersion><ns3:alertCDirection><ns3:alertCDirectionCoded>negative</ns3:alertCDirectionCoded><ns3:alertCAffectedDirection>aligned</ns3:alertCAffectedDirection></ns3:alertCDirection><ns3:alertCMethod4PrimaryPointLocation><ns3:alertCLocation><ns3:specificLocation>9373</ns3:specificLocation></ns3:alertCLocation><ns3:offsetDistance><ns3:offsetDistance>933</ns3:offsetDistance></ns3:offsetDistance></ns3:alertCMethod4PrimaryPointLocation><ns3:alertCMethod4SecondaryPointLocation><ns3:alertCLocation><ns3:specificLocation>9380</ns3:specificLocation></ns3:alertCLocation><ns3:offsetDistance>
+--- opbouw filebericht 3 (elke regel: element [kenmerken]: waarde) ---
+situationRecord [type=sit:AbnormalTraffic id=NLRWS_0005474129_1 version=12]
+  situationRecordCreationReference: c0f06ce1-8b8c-46dc-94b2-dc88ef5389a4
+  situationRecordCreationTime: 2026-10-09T07:23:28.244071Z
+  situationRecordVersionTime: 2026-10-09T07:35:00.672111Z
+  probabilityOfOccurrence: certain
+  source
+    sourceName
+      values
+        value [lang=nl]: NLRWS
+  validity
+    validityStatus: definedByValidityTimeSpec
+    validityTimeSpecification
+      overallStartTime: 2026-10-09T07:23:28.244071Z
+      validPeriod
+        startOfPeriod: 2026-10-09T07:23:28.244071Z
+  impact
+    delays
+      delayBand: betweenTenMinutesAndThirtyMinutes
+      delayTimeValue: 1599.0
+  locationReference [type=loc:ItineraryByIndexedLocations]
+    locationContainedInItinerary [index=0]
+      location [type=loc:LinearLocation]
+        supplementaryPositionalDescription
+          carriageway
+            carriageway: mainCarriageway
+        gmlLineString [srsName=WGS 84]
+          posList: 52.351452 5.732776 52.347482 5.719653 52.344936 5.71139 52.344544 5.71007 52.344
+    locationContainedInItinerary [index=1]
+      location [type=loc:SingleRoadLinearLocation]
+        supplementaryPositionalDescription
+          carriageway
+            carriageway: mainCarriageway
+        alertCLinear [type=loc:AlertCMethod4Linear]
+          alertCLocationCountryCode: 8
+          alertCLocationTableNumber: 6.13
+          alertCLocationTableVersion: A
+          alertCDirection
+            alertCDirectionCoded: negative
+            alertCAffectedDirection: aligned
+          alertCMethod4PrimaryPointLocation
+            alertCLocation
+              specificLocation: 8494
+            offsetDistance
+              offsetDistance: 1564
+          alertCMethod4SecondaryPointLocation
+            alertCLocation
+              specificLocation: 8501
+            offsetDistance
+              offsetDistance: 4236
+  abnormalTrafficType: stationaryTraffic
+  queueLength: 5100
