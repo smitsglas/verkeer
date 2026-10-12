@@ -28,7 +28,7 @@ WEGEN = []         # leeg = alle wegen. Voorbeeld: ["A2", "A12", "A15"]
 MIN_METERS = 0     # files korter dan dit overslaan (bijv. 500)
 
 # --- Nieuws en weer in de balk (volgorde in het scherm: verkeer, NOS, weer, Omroep Brabant)
-PLAATS = "Eindhoven"      # plaats voor de weersvoorspelling
+PLAATS = "Gemert"      # plaats voor de weersvoorspelling
 NOS_URL = "https://feeds.nos.nl/nosnieuwsalgemeen"
 BRABANT_URLS = ["https://rss.omroepbrabant.nl/", "http://rss.omroepbrabant.nl/"]
 BRABANT_SITE = "https://www.omroepbrabant.nl/"   # voor automatisch zoeken naar de RSS-link
