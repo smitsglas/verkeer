@@ -1,11 +1,11 @@
 Situatietypen in het bestand:
-  AbnormalTraffic: 89
-  Accident: 27
-  GeneralNetworkManagement: 14
-  GeneralObstruction: 31
+  AbnormalTraffic: 101
+  Accident: 25
+  GeneralNetworkManagement: 17
+  GeneralObstruction: 38
   ReroutingManagement: 59
-  RoadOrCarriagewayOrLaneManagement: 899
-  SpeedManagement: 104
-  VehicleObstruction: 191
-Herkende files: 89
+  RoadOrCarriagewayOrLaneManagement: 880
+  SpeedManagement: 103
+  VehicleObstruction: 202
+Herkende files: 101
 Locaties in VILD: 11483
