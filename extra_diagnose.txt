@@ -1,5 +1,5 @@
 NOS: 6 koppen
-Weer: Gemert
+weer mislukt: URLError(TimeoutError('_ssl.c:993: The handshake operation timed out'))
 Brabant: https://rss.omroepbrabant.nl/ mislukt (<urlopen error [Errno -5] No address associated with hostname>)
 Brabant: http://rss.omroepbrabant.nl/ mislukt (<urlopen error [Errno -5] No address associated with hostname>)
 Brabant: 6 koppen via https://www.omroepbrabant.nl/rss
