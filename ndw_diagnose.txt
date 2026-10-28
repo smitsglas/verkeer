@@ -1,10 +1,10 @@
 Situatietypen in het bestand:
   AbnormalTraffic: 2
-  Accident: 12
-  GeneralNetworkManagement: 12
-  GeneralObstruction: 17
+  Accident: 11
+  GeneralNetworkManagement: 7
+  GeneralObstruction: 19
   ReroutingManagement: 41
-  RoadOrCarriagewayOrLaneManagement: 876
+  RoadOrCarriagewayOrLaneManagement: 875
   SpeedManagement: 97
   VehicleObstruction: 160
 Herkende files: 2
