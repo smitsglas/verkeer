@@ -5,8 +5,8 @@ Situatietypen in het bestand:
   MaintenanceWorks: 1
   PoorEnvironmentConditions: 3
   ReroutingManagement: 135
-  RoadOrCarriagewayOrLaneManagement: 1125
-  SpeedManagement: 146
+  RoadOrCarriagewayOrLaneManagement: 1129
+  SpeedManagement: 145
   VehicleObstruction: 150
 Herkende files: 0
 Locaties in VILD: 11483
