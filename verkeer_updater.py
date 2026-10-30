@@ -425,9 +425,39 @@ def mooi_radar(t):
     return t
 
 
+ANWB_URL = "https://www.anwb.nl/feeds/gethf"   # onofficiele ANWB-feed met files, werkzaamheden en flitsers
+
+
+def anwb_radar(diag):
+    """Haalt flitsers uit de ANWB-feed. Geeft [] terug als de feed niet werkt of een andere opbouw heeft."""
+    j = json.loads(haal(ANWB_URL).decode("utf-8", "ignore"))
+    uit = []
+    rijen = j.get("roadEntries") if isinstance(j, dict) else None
+    if not isinstance(rijen, list):
+        diag.append("Radar: ANWB-feed heeft andere opbouw, velden: %s" % (sorted(j.keys())[:8] if isinstance(j, dict) else type(j).__name__))
+        return []
+    for e in rijen:
+        weg = (e.get("road") or "").strip()
+        ev = e.get("events") or {}
+        for r in (ev.get("radars") or ev.get("radar") or []):
+            van, naar = (r.get("from") or "").strip(), (r.get("to") or "").strip()
+            plek = " - ".join(x for x in (van, naar) if x) or (r.get("description") or r.get("location") or "").strip()
+            t = " ".join(x for x in (weg, plek) if x)
+            if t:
+                uit.append(t)
+    diag.append("Radar: %d meldingen via ANWB (%d wegen in feed)" % (len(uit), len(rijen)))
+    return uit
+
+
 def haal_radar(diag):
     uit = []
     try:
+        uit = anwb_radar(diag)
+    except Exception as e:
+        diag.append("Radar: ANWB mislukt (%r)" % (e,))
+    try:
+        if uit:
+            raise StopIteration
         wortel = ET.fromstring(haal(RADAR_RSS))
         for it in wortel.iter():
             if ln(it.tag) != "item":
@@ -439,6 +469,8 @@ def haal_radar(diag):
             if titel:
                 uit.append(mooi_radar(titel))
         diag.append("Radar: %d meldingen via flitsers.nl" % len(uit))
+    except StopIteration:
+        pass
     except Exception as e:
         diag.append("Radar: flitsers.nl mislukt (%r)" % (e,))
     try:
