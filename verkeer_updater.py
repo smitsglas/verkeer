@@ -412,6 +412,22 @@ def haal_weer(diag):
     return "  \u2022  ".join(delen)
 
 
+RADAR_TXT = os.path.join(HIER, "radar.txt")   # zelf bij te houden: 1 regel per snelheidscontrole
+
+
+def lees_radar(diag):
+    """Leest radar.txt: elke regel een melding, bijv. 'A2 Utrecht - Amsterdam hmp 35,3'. Lege regels en regels met # worden overgeslagen."""
+    try:
+        with open(RADAR_TXT, encoding="utf-8") as f:
+            regels = [r.strip() for r in f.read().splitlines()]
+    except Exception:
+        diag.append("Radar: geen radar.txt")
+        return []
+    uit = [r for r in regels if r and not r.startswith("#")][:10]
+    diag.append("Radar: %d meldingen" % len(uit))
+    return uit
+
+
 def run_once(eerst, vild):
     items, diag = ontleden(ophalen(), vild)
     oud = {}
@@ -430,6 +446,7 @@ def run_once(eerst, vild):
         extra[sleutel] = waarde or oud.get(sleutel, leeg)  # bij een storing blijft de vorige waarde staan
     data = {"t": int(time.time() * 1000), "n": len(items), "items": items[:MAX_ITEMS]}
     data.update(extra)
+    data["radar"] = lees_radar(edia)   # geen terugval op oude waarde: leeg bestand = geen radar
     gegevens = json.dumps(data, ensure_ascii=True)
     schrijf(UIT_JS, "window.VERKEER = " + gegevens + ";\n")
     schrijf(UIT_JSON, gegevens + "\n")

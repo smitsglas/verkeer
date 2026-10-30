@@ -1,0 +1,3 @@
+# Eén snelheidscontrole per regel. Regels met # worden genegeerd. Leeg laten = geen radar in de balk.
+# Voorbeeld (haal het #-teken weg om te gebruiken):
+# A2 Utrecht - Amsterdam hmp 35,3
