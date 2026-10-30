@@ -4,4 +4,4 @@ Brabant: https://rss.omroepbrabant.nl/ mislukt (<urlopen error [Errno -5] No add
 Brabant: http://rss.omroepbrabant.nl/ mislukt (<urlopen error [Errno -5] No address associated with hostname>)
 Brabant: 6 koppen via https://www.omroepbrabant.nl/rss
 Radar: 16 meldingen via ANWB (41 wegen in feed)
-Radar: 6 extra meldingen via flitsers.nl
+Radar: 5 extra meldingen via flitsers.nl
