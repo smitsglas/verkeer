@@ -425,28 +425,43 @@ def mooi_radar(t):
     return t
 
 
-ANWB_URL = "https://www.anwb.nl/feeds/gethf"   # onofficiele ANWB-feed met files, werkzaamheden en flitsers
+ANWB_URL = "https://api.anwb.nl/traffic/traffic-info/v1/incidents/incidents-desktop"   # onofficieel, zonder inlog
+
+
+def kort_plek(t):
+    """'knp. Diemen naar de A9 richting Amstelveen' -> 'knp. Diemen'"""
+    t = re.sub(r"\s+naar de\s+.*$", "", (t or "").strip())
+    return t.strip()
 
 
 def anwb_radar(diag):
-    """Haalt flitsers uit de ANWB-feed. Geeft [] terug als de feed niet werkt of een andere opbouw heeft."""
+    """Haalt flitsers (snelwegen) uit de ANWB-verkeersfeed. Geeft [] terug bij een andere opbouw."""
     j = json.loads(haal(ANWB_URL).decode("utf-8", "ignore"))
-    uit = []
-    rijen = j.get("roadEntries") if isinstance(j, dict) else None
-    if not isinstance(rijen, list):
+    wegen = j.get("roads") if isinstance(j, dict) else None
+    if not isinstance(wegen, list):
         diag.append("Radar: ANWB-feed heeft andere opbouw, velden: %s" % (sorted(j.keys())[:8] if isinstance(j, dict) else type(j).__name__))
         return []
-    for e in rijen:
-        weg = (e.get("road") or "").strip()
-        ev = e.get("events") or {}
-        for r in (ev.get("radars") or ev.get("radar") or []):
-            van, naar = (r.get("from") or "").strip(), (r.get("to") or "").strip()
-            plek = " - ".join(x for x in (van, naar) if x) or (r.get("description") or r.get("location") or "").strip()
-            t = " ".join(x for x in (weg, plek) if x)
-            if t:
-                uit.append(t)
-    diag.append("Radar: %d meldingen via ANWB (%d wegen in feed)" % (len(uit), len(rijen)))
+    uit = []
+    for w in wegen:
+        for seg in (w.get("segments") or []):
+            for r in (seg.get("radars") or []):
+                weg = (r.get("road") or w.get("road") or "").strip()
+                van, naar = kort_plek(r.get("from")), kort_plek(r.get("to"))
+                plek = " - ".join(x for x in (van, naar) if x)
+                hm = r.get("HM")
+                t = " ".join(x for x in (weg, plek) if x)
+                if hm is not None and t:
+                    t += " hmp %s" % ("%.1f" % float(hm)).replace(".", ",")
+                if t:
+                    uit.append(t)
+    diag.append("Radar: %d meldingen via ANWB (%d wegen in feed)" % (len(uit), len(wegen)))
     return uit
+
+
+def radar_sleutel(t):
+    """Weg + hectometerpaal, om dezelfde melding uit twee bronnen te herkennen."""
+    m = re.match(r"^(\S+).*\bhmp ([\d,]+)$", t)
+    return (m.group(1), m.group(2)) if m else None
 
 
 def haal_radar(diag):
@@ -455,10 +470,10 @@ def haal_radar(diag):
         uit = anwb_radar(diag)
     except Exception as e:
         diag.append("Radar: ANWB mislukt (%r)" % (e,))
-    try:
-        if uit:
-            raise StopIteration
+    try:   # flitsers.nl er altijd bij: die heeft ook N-wegen, ANWB alleen snelwegen
         wortel = ET.fromstring(haal(RADAR_RSS))
+        n = 0
+        bekend = set(filter(None, (radar_sleutel(x) for x in uit)))
         for it in wortel.iter():
             if ln(it.tag) != "item":
                 continue
@@ -467,10 +482,12 @@ def haal_radar(diag):
                 if ln(k.tag) == "title" and k.text and k.text.strip():
                     titel = k.text
             if titel:
-                uit.append(mooi_radar(titel))
-        diag.append("Radar: %d meldingen via flitsers.nl" % len(uit))
-    except StopIteration:
-        pass
+                m = mooi_radar(titel)
+                if radar_sleutel(m) in bekend:
+                    continue
+                uit.append(m)
+                n += 1
+        diag.append("Radar: %d extra meldingen via flitsers.nl" % n)
     except Exception as e:
         diag.append("Radar: flitsers.nl mislukt (%r)" % (e,))
     try:
@@ -486,7 +503,7 @@ def haal_radar(diag):
         if r not in gezien:
             gezien.add(r)
             res.append(r)
-    return res[:10]
+    return res[:15]
 
 
 def run_once(eerst, vild):
