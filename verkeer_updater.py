@@ -412,20 +412,49 @@ def haal_weer(diag):
     return "  \u2022  ".join(delen)
 
 
-RADAR_TXT = os.path.join(HIER, "radar.txt")   # zelf bij te houden: 1 regel per snelheidscontrole
+RADAR_TXT = os.path.join(HIER, "radar.txt")   # optioneel: handmatige meldingen erbij (1 regel per melding)
+RADAR_RSS = "https://www.flitsers.nl/flitsers.rss"   # automatische bron: meldingen verdwijnen vanzelf
 
 
-def lees_radar(diag):
-    """Leest radar.txt: elke regel een melding, bijv. 'A2 Utrecht - Amsterdam hmp 35,3'. Lege regels en regels met # worden overgeslagen."""
+def mooi_radar(t):
+    """'A67 66.0 Eindhoven - Venlo t.h.v. Helden' -> 'A67 Eindhoven - Venlo t.h.v. Helden hmp 66,0'"""
+    t = " ".join((t or "").split())
+    m = re.match(r"^([AN]\d{1,3})\s+(\d{1,3}[.,]\d)\s+(.+)$", t)
+    if m:
+        return "%s %s hmp %s" % (m.group(1), m.group(3), m.group(2).replace(".", ","))
+    return t
+
+
+def haal_radar(diag):
+    uit = []
+    try:
+        wortel = ET.fromstring(haal(RADAR_RSS))
+        for it in wortel.iter():
+            if ln(it.tag) != "item":
+                continue
+            titel = ""
+            for k in it:
+                if ln(k.tag) == "title" and k.text and k.text.strip():
+                    titel = k.text
+            if titel:
+                uit.append(mooi_radar(titel))
+        diag.append("Radar: %d meldingen via flitsers.nl" % len(uit))
+    except Exception as e:
+        diag.append("Radar: flitsers.nl mislukt (%r)" % (e,))
     try:
         with open(RADAR_TXT, encoding="utf-8") as f:
-            regels = [r.strip() for r in f.read().splitlines()]
+            hand = [r.strip() for r in f.read().splitlines() if r.strip() and not r.strip().startswith("#")]
+        uit += hand
+        if hand:
+            diag.append("Radar: %d handmatig uit radar.txt" % len(hand))
     except Exception:
-        diag.append("Radar: geen radar.txt")
-        return []
-    uit = [r for r in regels if r and not r.startswith("#")][:10]
-    diag.append("Radar: %d meldingen" % len(uit))
-    return uit
+        pass
+    gezien, res = set(), []
+    for r in uit:
+        if r not in gezien:
+            gezien.add(r)
+            res.append(r)
+    return res[:10]
 
 
 def run_once(eerst, vild):
@@ -446,7 +475,7 @@ def run_once(eerst, vild):
         extra[sleutel] = waarde or oud.get(sleutel, leeg)  # bij een storing blijft de vorige waarde staan
     data = {"t": int(time.time() * 1000), "n": len(items), "items": items[:MAX_ITEMS]}
     data.update(extra)
-    data["radar"] = lees_radar(edia)   # geen terugval op oude waarde: leeg bestand = geen radar
+    data["radar"] = haal_radar(edia)   # geen terugval op oude waarde: leeg bestand = geen radar
     gegevens = json.dumps(data, ensure_ascii=True)
     schrijf(UIT_JS, "window.VERKEER = " + gegevens + ";\n")
     schrijf(UIT_JSON, gegevens + "\n")
