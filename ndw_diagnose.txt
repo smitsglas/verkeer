@@ -1,7 +1,7 @@
 Situatietypen in het bestand:
   GeneralInstructionOrMessageToRoadUsers: 1
-  GeneralNetworkManagement: 5
-  GeneralObstruction: 4
+  GeneralNetworkManagement: 6
+  GeneralObstruction: 3
   PoorEnvironmentConditions: 1
   ReroutingManagement: 105
   RoadOrCarriagewayOrLaneManagement: 1084
