@@ -3,5 +3,5 @@ Weer: Gemert
 Brabant: https://rss.omroepbrabant.nl/ mislukt (<urlopen error [Errno -5] No address associated with hostname>)
 Brabant: http://rss.omroepbrabant.nl/ mislukt (<urlopen error [Errno -5] No address associated with hostname>)
 Brabant: 6 koppen via https://www.omroepbrabant.nl/rss
-Radar: 16 meldingen via ANWB (37 wegen in feed)
-Radar: 3 extra meldingen via flitsers.nl
+Radar: 14 meldingen via ANWB (36 wegen in feed)
+Radar: 2 extra meldingen via flitsers.nl
