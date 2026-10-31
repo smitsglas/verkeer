@@ -1,5 +1,5 @@
 Situatietypen in het bestand:
-  Accident: 2
+  Accident: 1
   GeneralNetworkManagement: 3
   GeneralObstruction: 5
   PoorEnvironmentConditions: 1
