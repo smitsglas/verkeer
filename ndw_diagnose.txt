@@ -1,6 +1,6 @@
 Situatietypen in het bestand:
   Accident: 2
-  GeneralNetworkManagement: 16
+  GeneralNetworkManagement: 14
   GeneralObstruction: 15
   PoorEnvironmentConditions: 1
   ReroutingManagement: 117
