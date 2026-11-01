@@ -6,6 +6,6 @@ Situatietypen in het bestand:
   ReroutingManagement: 158
   RoadOrCarriagewayOrLaneManagement: 894
   SpeedManagement: 110
-  VehicleObstruction: 63
+  VehicleObstruction: 62
 Herkende files: 0
 Locaties in VILD: 11483
