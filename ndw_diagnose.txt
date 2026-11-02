@@ -1,6 +1,6 @@
 Situatietypen in het bestand:
   GeneralNetworkManagement: 4
-  GeneralObstruction: 1
+  GeneralObstruction: 2
   ReroutingManagement: 73
   RoadOrCarriagewayOrLaneManagement: 793
   SpeedManagement: 92
