@@ -4,8 +4,8 @@ Situatietypen in het bestand:
   GeneralObstruction: 3
   PoorEnvironmentConditions: 2
   ReroutingManagement: 65
-  RoadOrCarriagewayOrLaneManagement: 806
+  RoadOrCarriagewayOrLaneManagement: 809
   SpeedManagement: 94
-  VehicleObstruction: 54
+  VehicleObstruction: 53
 Herkende files: 0
 Locaties in VILD: 11483
