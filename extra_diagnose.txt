@@ -1,7 +1,7 @@
 NOS: 6 koppen
-weer mislukt: <HTTPError 503: 'Service Unavailable'>
+weer mislukt: URLError(TimeoutError('_ssl.c:994: The handshake operation timed out'))
 Brabant: https://rss.omroepbrabant.nl/ mislukt (<urlopen error [Errno -5] No address associated with hostname>)
 Brabant: http://rss.omroepbrabant.nl/ mislukt (<urlopen error [Errno -5] No address associated with hostname>)
 Brabant: 6 koppen via https://www.omroepbrabant.nl/rss
-Radar: 3 meldingen via ANWB (35 wegen in feed)
-Radar: 1 extra meldingen via flitsers.nl
+Radar: 3 meldingen via ANWB (29 wegen in feed)
+Radar: 0 extra meldingen via flitsers.nl
