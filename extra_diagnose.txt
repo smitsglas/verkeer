@@ -1,7 +1,7 @@
 NOS: 6 koppen
-Weer: Gemert
+weer mislukt: <HTTPError 503: 'Service Unavailable'>
 Brabant: https://rss.omroepbrabant.nl/ mislukt (<urlopen error [Errno -5] No address associated with hostname>)
 Brabant: http://rss.omroepbrabant.nl/ mislukt (<urlopen error [Errno -5] No address associated with hostname>)
 Brabant: 6 koppen via https://www.omroepbrabant.nl/rss
-Radar: 4 meldingen via ANWB (35 wegen in feed)
+Radar: 3 meldingen via ANWB (35 wegen in feed)
 Radar: 1 extra meldingen via flitsers.nl
