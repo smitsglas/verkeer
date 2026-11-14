@@ -3,5 +3,5 @@ weer mislukt: URLError(TimeoutError('_ssl.c:994: The handshake operation timed o
 Brabant: https://rss.omroepbrabant.nl/ mislukt (<urlopen error [Errno -5] No address associated with hostname>)
 Brabant: http://rss.omroepbrabant.nl/ mislukt (<urlopen error [Errno -5] No address associated with hostname>)
 Brabant: 6 koppen via https://www.omroepbrabant.nl/rss
-Radar: 2 meldingen via ANWB (31 wegen in feed)
+Radar: 3 meldingen via ANWB (32 wegen in feed)
 Radar: 0 extra meldingen via flitsers.nl
