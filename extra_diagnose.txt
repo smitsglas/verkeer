@@ -1,7 +1,7 @@
 NOS: 6 koppen
-weer mislukt: URLError(TimeoutError('_ssl.c:994: The handshake operation timed out'))
+Weer: Gemert
 Brabant: https://rss.omroepbrabant.nl/ mislukt (<urlopen error [Errno -5] No address associated with hostname>)
 Brabant: http://rss.omroepbrabant.nl/ mislukt (<urlopen error [Errno -5] No address associated with hostname>)
 Brabant: 6 koppen via https://www.omroepbrabant.nl/rss
-Radar: 13 meldingen via ANWB (44 wegen in feed)
+Radar: 12 meldingen via ANWB (45 wegen in feed)
 Radar: 1 extra meldingen via flitsers.nl
