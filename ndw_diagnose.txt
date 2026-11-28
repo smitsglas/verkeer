@@ -1,6 +1,7 @@
 Situatietypen in het bestand:
   AbnormalTraffic: 1
-  GeneralNetworkManagement: 3
+  Accident: 1
+  GeneralNetworkManagement: 2
   GeneralObstruction: 7
   ReroutingManagement: 84
   RoadOrCarriagewayOrLaneManagement: 823
